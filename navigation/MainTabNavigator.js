@@ -15,7 +15,7 @@ const HomeStack = createStackNavigator({
 });
 
 HomeStack.navigationOptions = {
-  tabBarLabel: "New Task",
+  tabBarLabel: "New",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -33,7 +33,7 @@ const LinksStack = createStackNavigator({
 });
 
 LinksStack.navigationOptions = {
-  tabBarLabel: "Tasks",
+  tabBarLabel: "Current",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -51,7 +51,7 @@ const SettingsStack = createStackNavigator({
 });
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: "Completed Tasks",
+  tabBarLabel: "Completed",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
