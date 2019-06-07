@@ -60,7 +60,7 @@ export default class App extends React.Component {
   };
 
   _loadClient() {
-    Stitch.initializeDefaultAppClient("taskmanager-kzydo").then(client => {
+    Stitch.initializeDefaultAppClient("YOUR APP ID").then(client => {
       this.setState({ client });
       this.state.client.auth
         .loginWithCredential(new AnonymousCredential())
