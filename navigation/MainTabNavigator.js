@@ -1,63 +1,71 @@
-import React from 'react';
-import { Platform } from 'react-native';
+import React from "react";
+import { Platform } from "react-native";
 import {
   createStackNavigator,
-  createBottomTabNavigator,
-} from 'react-navigation';
+  createBottomTabNavigator
+} from "react-navigation";
 
-import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import TabBarIcon from "../components/TabBarIcon";
+import HomeScreen from "../screens/HomeScreen";
+import LinksScreen from "../screens/LinksScreen";
+import SettingsScreen from "../screens/SettingsScreen";
 
 const HomeStack = createStackNavigator({
-  Home: HomeScreen,
+  Home: HomeScreen
 });
 
 HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+  tabBarLabel: "New Task",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
       name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
+        Platform.OS === "ios"
+          ? `ios-add-circle${focused ? "" : "-outline"}`
+          : "md-add-circle"
       }
     />
-  ),
+  )
 };
 
 const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+  Links: LinksScreen
 });
 
 LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+  tabBarLabel: "Tasks",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+      name={
+        Platform.OS === "ios"
+          ? `ios-mail${focused ? "-open" : ""}`
+          : `md-mail${focused ? "-open" : ""}`
+      }
     />
-  ),
+  )
 };
 
 const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
+  Settings: SettingsScreen
 });
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+  tabBarLabel: "Completed Tasks",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+      name={
+        Platform.OS === "ios"
+          ? "ios-checkmark-circle-outline"
+          : "md-checkmark-circle-outline"
+      }
     />
-  ),
+  )
 };
 
 export default createBottomTabNavigator({
   HomeStack,
   LinksStack,
-  SettingsStack,
+  SettingsStack
 });

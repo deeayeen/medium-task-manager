@@ -291,8 +291,11 @@ LinksScreen.navigationOptions = {
       name={Platform.OS == "ios" ? "ios-clipboard" : "md-clipboard"}
       size={23}
       style={{
-        color: "#2e78b7"
+        color: "#2e78b7",
+        flex: 1,
+        textAlign: "center"
       }}
+      resizeMode="contain"
     />
   )
 };

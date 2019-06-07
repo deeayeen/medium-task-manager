@@ -231,8 +231,11 @@ SettingsScreen.navigationOptions = {
       }
       size={23}
       style={{
-        color: "#2e78b7"
+        color: "#2e78b7",
+        flex: 1,
+        textAlign: "center"
       }}
+      resizeMode="contain"
     />
   )
 };
