@@ -1,22 +1,16 @@
 import React from "react";
 import {
   RefreshControl,
-  UIManager,
   Platform,
   SectionList,
-  Image,
   StyleSheet,
   Text,
-  View,
-  ActivityIndicator
+  View
 } from "react-native";
-import { Constants } from "expo";
 import moment from "moment";
 import Swipeout from "react-native-swipeout";
 import { AntDesign, Ionicons } from "@expo/vector-icons";
-
 import { Stitch, RemoteMongoClient } from "mongodb-stitch-react-native-sdk";
-
 import Confetti from "react-native-confetti";
 
 export default class LinksScreen extends React.Component {
@@ -30,17 +24,6 @@ export default class LinksScreen extends React.Component {
     };
     this._loadClient = this._loadClient.bind(this);
   }
-
-  static navigationOptions = {
-    headerTitle: (
-      <Ionicons
-        name={Platform.OS == "ios" ? "ios-clipboard" : "md-clipboard"}
-        size={30}
-        style={{ textAlign: "center", color: "#2e78b7", flex: 1 }}
-        resizeMode="contain"
-      />
-    )
-  };
 
   componentDidMount() {
     this._loadClient();
@@ -68,7 +51,6 @@ export default class LinksScreen extends React.Component {
   };
 
   render() {
-    const { manifest } = Constants;
     const sections =
       this.state.tasks == undefined
         ? [{ data: [{ title: "Loading..." }], title: "Loading..." }]
@@ -305,12 +287,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff"
   },
-  titleContainer: {
-    paddingHorizontal: 15,
-    paddingTop: 15,
-    paddingBottom: 15,
-    flexDirection: "row"
-  },
   sectionHeaderContainer: {
     backgroundColor: "#fbfbfb",
     paddingVertical: 8,
@@ -340,12 +316,5 @@ const styles = StyleSheet.create({
     paddingVertical: 3,
     textAlign: "center",
     color: "lightgray"
-  },
-  taskListTextTimeComplete: {
-    paddingVertical: 3,
-    paddingHorizontal: 10,
-    textAlign: "left",
-    color: "green",
-    fontSize: 13
   }
 });

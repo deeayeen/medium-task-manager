@@ -3,7 +3,6 @@ import {
   RefreshControl,
   Platform,
   SectionList,
-  Image,
   StyleSheet,
   Text,
   View
@@ -12,7 +11,6 @@ import { Constants } from "expo";
 import Swipeout from "react-native-swipeout";
 import moment from "moment/min/moment-with-locales";
 import { AntDesign, Ionicons } from "@expo/vector-icons";
-
 import { Stitch, RemoteMongoClient } from "mongodb-stitch-react-native-sdk";
 
 export default class SettingsScreen extends React.Component {
@@ -244,16 +242,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff"
-  },
-  titleContainer: {
-    paddingHorizontal: 15,
-    paddingTop: 15,
-    paddingBottom: 15,
-    flexDirection: "row"
-  },
-  titleIconContainer: {
-    marginRight: 15,
-    paddingTop: 2
   },
   sectionHeaderContainer: {
     backgroundColor: "#fbfbfb",
